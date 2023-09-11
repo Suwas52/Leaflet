@@ -28,11 +28,11 @@ const polygon2 = [
   [85.30967229911812, 27.732066805778018],
 ];
 
-// const polyline = [
-//   [51.505, -0.09],
-//   [51.51, -0.1],
-//   [51.51, -0.12],
-// ];
+const polyline = [
+  [51.505, -0.09],
+  [51.51, -0.1],
+  [51.51, -0.12],
+];
 
 const multiPolyline = [
   [
@@ -130,6 +130,19 @@ function Map() {
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
           </Marker> */}
+
+          <CircleMarker
+            center={[51.51, -0.12]}
+            pathOptions={redOptions}
+            radius={20}
+          >
+            <Popup>Popup in CircleMarker</Popup>
+          </CircleMarker>
+
+          <Polyline pathOptions={limeOptions} positions={multiPolyline} />
+
+          <Polyline pathOptions={limeOptions} positions={polyline} />
+          <Polygon pathOptions={purpleOptions} positions={polygon2} />
 
           <ReverseGeocoding location={markerPosition} />
 
